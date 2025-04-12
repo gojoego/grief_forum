@@ -1,0 +1,43 @@
+{% extends './base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        <div class="post-preview" onclick="togglePost('{{ post.id }}')">
+            <strong> {{ post.deceased_name}} </strong> - {{post.preview}}
+            <br><small> Posted by {{ post.poster_name}} </small>
+        </div>
+        <div class="post-body" id="body-{{ post.id }}">
+            <p><em> Background Story:</em><br>{{ post.background_story }}</p>
+            <h4> What I wish I could say to {{ post.deceased_name }}:</h4>
+            <p>{{ post.message_to_deceased }}</p>
+        </div>
+        <hr>
+    {% empty %}
+        <p>No posts yet. Be the first to share.</p>
+    {% endfor %}
+
+    <a href="{% url 'create_post' %}">
+        <button>Create New Post</button>
+    </a>
+
+    <hr>
+
+    <section id="about-me">
+        <h2>about me</h2>
+        <p>
+            My name is Joe. Born in the sun of San Diego and raised in the fog of San Francisco, I now live in the
+            heat of the Texan sun. I am social worker who found himself immersed in the burgeoning tech scene of 
+            Silicon Valley. I eventually learned to code and decided to start building applications that could possibly 
+            help individuals with mental health struggles. As someone who has struggled with clinical depression since 
+            age 5 and contended with a myriad of other diagnoses (Anxiety, PTSD, and ADHD), I strive to build products 
+            imbued with empathy, kindness and acceptance.  
+        </p>
+        <h2>about this website</h2>
+        <p>
+            At the end of 2022, my friend Moriah passed away from suicide. I think about what I could've done 
+            to help prevent it. There are things I wish I could've said to her before her death. This is why 
+            I started building this website. I wanted this to be an outlet where we could express our grief 
+            and find comfort by connecting with others who lost someone they love to suicide. 
+        </p>
+    </section>
+{% endblock %}

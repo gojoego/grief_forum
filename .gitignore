@@ -1,0 +1,112 @@
+# === Python Bytecode & Caches ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# === Virtual Environments ===
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# === Django Specific ===
+*.log
+db.sqlite3
+db.sqlite3-journal
+*.env
+settings_local.py
+
+media/
+staticfiles/
+
+**/migrations/*.py
+!**/migrations/__init__.py
+
+# === Coverage & Testing ===
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+.hypothesis/
+
+# === Build & Distribution ===
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.Python
+
+# === Project Settings / Tools ===
+.pdm.toml
+.pdm-python
+.pdm-build/
+.pybuilder/
+target/
+.pyre/
+.pytype/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+.pypirc
+
+# === IDE & Editor Configs ===
+.idea/
+.vscode/
+.spyderproject
+.spyproject
+.ropeproject
+*.sublime-project
+*.sublime-workspace
+
+# === Documentation ===
+docs/_build/
+.site/
+
+# === Jupyter/IPython ===
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+
+# === Flask & Scrapy (if ever used) ===
+instance/
+.webassets-cache
+.scrapy/
+
+# === PyInstaller & Other Build Artifacts ===
+*.spec
+*.manifest
+cython_debug/
+
+# === Celery ===
+celerybeat-schedule
+celerybeat.pid
+
+# === Misc OS Files ===
+.DS_Store
+Thumbs.db
+
+# === Others (if used) ===
+__pypackages__/

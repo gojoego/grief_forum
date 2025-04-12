@@ -1,0 +1,57 @@
+body { 
+    font-family: 'Georgia', serif;
+    line-height: 1.6; 
+    max-width: 700px; 
+    margin: auto; 
+    padding: 20px; 
+    background-color: #fefcf9;
+    color: #333;
+}
+
+#quote {
+    font-style: italic; 
+    color: #777;
+    text-align: center;
+}
+
+h1, h2, h4 {
+    color: #5a4e4d;
+}
+
+h1 {
+    text-align: center;
+}
+.post-preview { 
+    cursor: pointer; 
+    margin-bottom: 10px;
+}
+.post-preview:hover {
+    background-color: #f3eee9;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.01);
+}
+.post-body { 
+    display: none; 
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+button { 
+    margin-top: 20px; 
+    background-color: #ede0d4;
+    color: #5a4e4d;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3x ease;
+}
+#about-me {
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f9f2f0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-top: 40px;
+    font-size: 0.95em;
+    color: #333;
+}
