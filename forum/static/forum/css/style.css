@@ -33,6 +33,13 @@ h1 {
     display: none; 
     margin-bottom: 20px;
     transition: all 0.3s ease;
+    background-color: f9f4f0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3pm rgba(0, 0, 0, 0.05);
+    margin-top: 10px;
+    display: none;
+    transition: all 0.3 ease;
 }
 button { 
     margin-top: 20px; 
@@ -54,4 +61,14 @@ button {
     margin-top: 40px;
     font-size: 0.95em;
     color: #333;
+}
+.post-container {
+    margin-bottom: 30px;
+}
+
+.post-body h4 {
+    margin-top: 1em;
+    font-weight: normal;
+    font-size: 1.1em;
+    color: #5a4e4d
 }

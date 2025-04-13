@@ -1,12 +1,27 @@
+console.log("✅ JS loaded");
+
 function togglePost(id) {
+    const preview = document.getElementById('preview-' + id);
     const body = document.getElementById('body-' + id);
-    if (body.style.display === 'none' || body.style.display === '') {
-        body.style.display = 'block';
-        body.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
+
+    console.log('🧪 toggle clicked for ID: ', id);
+    console.log('preview element: ', preview);
+    console.log('body element: ', body)
+
+    if (!preview || !body) {
+        console.error('❌ missing preview or body element for ID ', id)
+        return;
+    }
+
+    const isExpanded = body.style.display === 'block';
+
+    if (isExpanded) {
+        body.style.display = 'none';
+        preview.style.display = 'block';
+        preview.scrollIntoView({ behavior: 'smooth', block: 'start'});
     } else {
-        body.style.display = 'none'
+        body.style.display = 'block';
+        preview.style.display = 'none';
+        body.scrollIntoView({ behavior: 'smooth', block: 'start'});        
     }
 }

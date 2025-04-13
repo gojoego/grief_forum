@@ -2,16 +2,21 @@
 
 {% block content %}
     {% for post in posts %}
-        <div class="post-preview" onclick="togglePost('{{ post.id }}')">
-            <strong> {{ post.deceased_name}} </strong> - {{post.preview}}
-            <br><small> Posted by {{ post.poster_name}} </small>
+        <div class="post-container">
+            <div class="post-preview" id="preview-{{ post.id }}" onclick="togglePost('{{ post.id }}')">
+                <strong> {{ post.deceased_name}} </strong> - {{post.preview}}
+                <br><small> Posted by {{ post.poster_name}} </small>
+            </div>
+            <div class="post-body" id="body-{{ post.id }}" style="display: none;" onclick="togglePost('{{ post.id }}')">
+                <p><strong>Background Story:</strong><br>{{ post.background_story }}</p>
+                <h4>What I wish I could say to {{ post.deceased_name }}:</h4>
+                <p><strong>Dear {{ post.deceased_name }},</strong></p>
+                <p>{{ post.message_to_deceased }}</p>
+                <p><strong>Love,</strong><br>{{ post.poster_name }}</p>
+            </div>
+            <hr>
         </div>
-        <div class="post-body" id="body-{{ post.id }}">
-            <p><em> Background Story:</em><br>{{ post.background_story }}</p>
-            <h4> What I wish I could say to {{ post.deceased_name }}:</h4>
-            <p>{{ post.message_to_deceased }}</p>
-        </div>
-        <hr>
+
     {% empty %}
         <p>No posts yet. Be the first to share.</p>
     {% endfor %}
