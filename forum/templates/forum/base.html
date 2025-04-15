@@ -2,13 +2,14 @@
 <html>
     <head>
         {% load static %}
+        <link rel="stylesheet" href="{% static 'forum/css/style1.css' %}">
         <title>{% block title %} The Moriah Project {% endblock %}</title>
-        <link rel="stylesheet" href="{% static 'forum/css/style.css' %}">
+        
         <script src="{% static 'forum/js/script.js' %}" defer></script>
     </head>
     <body>
         <h1> The Moriah Project </h1>
-        <p id="quote">“To live in hearts we leave behind is not to die.” — Thomas Campbell</p></p>
+        <p id="quote">“To live in hearts we leave behind is not to die.” — Thomas Campbell</p>
         <p>a space to share your story and say what you wish you could say to someone you've lost to suicide</p>
         <hr>
         {% block content %}{% endblock %}

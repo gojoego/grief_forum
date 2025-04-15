@@ -1,4 +1,5 @@
 {% extends './base.html' %}
+{% load static %}
 
 {% block content %}
     {% for post in posts %}
@@ -21,13 +22,14 @@
         <p>No posts yet. Be the first to share.</p>
     {% endfor %}
 
-    <a href="{% url 'create_post' %}">
-        <button>Create New Post</button>
-    </a>
+    <div class="button-container">
+        <a href="{% url 'create_post' %}" class="button-link create-post">create new post</a>
+    </div>
 
     <hr>
-
-    <section id="about-me">
+    <!-- about me section -->
+    <button onclick="toggleSection('about-me')">about me</button>
+    <div id="about-me" class="about-section" style="display: none;">
         <h2>about me</h2>
         <p>
             My name is Joe. Born in the sun of San Diego and raised in the fog of San Francisco, I now live in the
@@ -36,7 +38,11 @@
             help individuals with mental health struggles. As someone who has struggled with clinical depression since 
             age 5 and contended with a myriad of other diagnoses (Anxiety, PTSD, and ADHD), I strive to build products 
             imbued with empathy, kindness and acceptance.  
-        </p>
+        </p>      
+    </div>
+    <hr>
+    <button onclick="toggleSection('about-website')">about this website</button>
+    <div id="about-website" class="about-section" style="display: none;">
         <h2>about this website</h2>
         <p>
             At the end of 2022, my friend Moriah passed away from suicide. I think about what I could've done 
@@ -44,5 +50,6 @@
             I started building this website. I wanted this to be an outlet where we could express our grief 
             and find comfort by connecting with others who lost someone they love to suicide. 
         </p>
-    </section>
+    </div>
+
 {% endblock %}

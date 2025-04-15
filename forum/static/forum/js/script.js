@@ -25,3 +25,17 @@ function togglePost(id) {
         body.scrollIntoView({ behavior: 'smooth', block: 'start'});        
     }
 }
+
+function toggleSection(id){
+    const section = document.getElementById(id);
+    const button = document.querySelector(`button[onclick="toggleSection('${id}')"]`);
+
+    const isVisible = section.style.display === 'block';
+    section.style.display = isVisible ? 'none' : 'block';
+
+    if (button) {
+        button.textContent = isVisible
+            ? (id === 'about-me' ? 'show about me' : 'show about this website')
+            : (id === 'about-me' ? 'hide about me' : 'hide about this website');
+    }
+}
