@@ -111,3 +111,41 @@ button:hover {
 .create-post:hover {
     background-color: #87986a;
 }
+
+a, .button-link {
+    color: #7b9aaa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: #4f7085;
+    text-decoration: underline;
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    color: #4f7085;
+    font-size: 1em;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.3 ease;    
+}
+
+.logout-button:hover {
+    color: #4f7085;
+}
+
+.delete-button {
+    background-color: #e57373;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #c62828;
+}

@@ -1,18 +1,24 @@
-from django.shortcuts import render, redirect 
+from django.shortcuts import render, redirect, get_object_or_404
+from django.http import HttpResponseForbidden
 from .models import Post 
-from .forms import PostForm
+from .forms import PostForm, CustomUserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
 
 def home(request):
     posts = Post.objects.order_by('-created_at')
     return render(request, 'forum/home.html', {'posts': posts})
 
+@login_required
 def create_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
-            form.save()
+            post = form.save(commit=False)
+            post.poster_name = request.user.first_name
+            post.save()
+            messages.success(request, "your post has been shared")
             return redirect('home')
     else:
         form = PostForm()
@@ -21,11 +27,25 @@ def create_post(request):
 
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, "Account created! Please log in.")
             return redirect('login')
     else:
-        form = UserCreationForm()
+        form = CustomUserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
 
+def delete_post(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    
+    # only allow if user is also poster 
+    if post.poster_name != request.user.first_name:
+        return redirect('home')
+    
+    if request.method == "POST":
+        post.delete()
+        messages.success(request, "your post has been deleted.")
+        return redirect('home')
+
+    return render(request, 'forum/confirm_deletion.html', {'post': post})

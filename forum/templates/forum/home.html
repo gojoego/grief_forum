@@ -15,6 +15,12 @@
                 <p>{{ post.message_to_deceased }}</p>
                 <p><strong>Love,</strong><br>{{ post.poster_name }}</p>
             </div>
+            {% if user.is_authenticated and user.first_name == post.poster_name %}
+                <form method="get" action="{% url 'delete_post' post.id %}">
+                    <button type="submit" class="delete-button">delete</button>
+                </form>
+            {% endif %}
+            
             <hr>
         </div>
 

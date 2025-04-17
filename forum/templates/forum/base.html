@@ -1,17 +1,46 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        {% load static %}
-        <link rel="stylesheet" href="{% static 'forum/css/style1.css' %}">
-        <title>{% block title %} The Moriah Project {% endblock %}</title>
-        
-        <script src="{% static 'forum/js/script.js' %}" defer></script>
-    </head>
-    <body>
-        <h1> The Moriah Project </h1>
-        <p id="quote">“To live in hearts we leave behind is not to die.” — Thomas Campbell</p>
-        <p>a space to share your story and say what you wish you could say to someone you've lost to suicide</p>
-        <hr>
-        {% block content %}{% endblock %}
-    </body>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>{% block title %} The Moriah Project {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'forum/css/style.css' %}">
+    <script src="{% static 'forum/js/script.js' %}" defer></script>
+</head>
+<body>
+
+    {% if user.is_authenticated %}
+    <p>
+        logged in as {{ user.username }} |
+        <form method="post" action="{% url 'logout' %}" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" class="logout-button">
+                logout 
+            </button>
+        </form>        
+    </p>
+    {% else %}
+        <p>
+            <a href="{% url 'login' %}">login</a> | 
+            <a href="{% url 'register' %}">register</a>
+        </p>
+    {% endif %}
+
+    <h1> The Moriah Project </h1>
+    <p id="quote">“To live in hearts we leave behind is not to die.” — Thomas Campbell</p>
+    <p>a space to share your story and say what you wish you could say to someone you've lost to suicide</p>
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <hr>
+
+    {% block content %}{% endblock %}
+
+</body>
 </html>
