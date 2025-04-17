@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: django-app
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn forum_project.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: forum_project.settings
+      - key: PYTHON_VERSION
+        value: 3.11
