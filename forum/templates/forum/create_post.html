@@ -1,10 +1,24 @@
 {% extends "forum/base.html" %}
 
 {% block content %}
-    <h2>Create a New Post</h2>
+    <h2>create a new post</h2>
+
+    {% if form.errors %}
+        <p>please fixe the following errors </p>
+    {% endif %}
+
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+
+        <label for="id_deceased_name">name of the deceased:</label><br>
+        {{ form.deceased_name }}<br><br>
+
+        <label for="id_background_story">background story:</label><br>
+        {{ form.background_story }}<br><br>
+
+        <label for="id_message_to_deceased">what I wish I could say...</label><br>
+        {{ form.message_to_deceased }}<br><br>
+
         <button type="submit">Submit</button>
     </form>
-{% endblock %}
+{% endblock content %}
