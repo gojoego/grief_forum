@@ -1,0 +1,151 @@
+body { 
+    font-family: 'Georgia', serif;
+    line-height: 1.6; 
+    max-width: 700px; 
+    margin: auto; 
+    padding: 20px; 
+    background-color: #fefcf9;
+    color: #333;
+}
+
+#quote {
+    font-style: italic; 
+    color: #777;
+    text-align: center;
+}
+
+h1, h2, h4 {
+    color: #5a4e4d;
+}
+
+h1 {
+    text-align: center;
+}
+.post-preview { 
+    cursor: pointer; 
+    margin-bottom: 10px;
+}
+.post-preview:hover {
+    background-color: #f3eee9;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.01);
+}
+.post-body { 
+    display: none; 
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    background-color: #f9f4f0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    margin-top: 10px;
+    display: none;
+    transition: all 0.3 ease;
+}
+button { 
+    margin-top: 20px; 
+    background-color: #ede0d4;
+    color: #5a4e4d;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #dccdb3;
+}
+#about-me {
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f9f2f0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-top: 40px;
+    font-size: 0.95em;
+    color: #333;
+}
+.post-container {
+    margin-bottom: 30px;
+}
+
+.post-body h4 {
+    margin-top: 1em;
+    font-weight: normal;
+    font-size: 1.1em;
+    color: #5a4e4d
+}
+.about-section {
+    background-color: #fff4db;
+    padding: 20px;
+    border-left: 6px solid #e0b16c;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-size: 0.95em;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+.button-link {
+    display: inline-block;
+    background-color: #ede0d4;
+    color: #5a4e4d;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 1px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+.button-link:hover {
+    background-color: #dccdb3;
+}
+.button-container {
+    text-align: center;
+    margin: 30px 0;
+}
+.create-post {
+    background-color: #a3b18a;
+    color: #fff;
+}
+.create-post:hover {
+    background-color: #87986a;
+}
+
+a, .button-link {
+    color: #7b9aaa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: #4f7085;
+    text-decoration: underline;
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    color: #4f7085;
+    font-size: 1em;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.3 ease;    
+}
+
+.logout-button:hover {
+    color: #4f7085;
+}
+
+.delete-button {
+    background-color: #e57373;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #c62828;
+}
