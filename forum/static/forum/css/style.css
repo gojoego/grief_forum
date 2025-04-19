@@ -8,6 +8,28 @@ body {
     color: #333;
 }
 
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .button-container {
+        text-align: center;
+    }
+
+    .button-link, 
+    .create-post,
+    button {
+        width: 100%; 
+        box-sizing: border-box;
+        margin-top: 10px;
+    }
+
+    .quote-block {
+        padding: 0 10px;
+    }
+}
+
 #quote {
     font-style: italic; 
     color: #777;
