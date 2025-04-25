@@ -18,7 +18,8 @@ db.sqlite3
 db.sqlite3-journal
 *.env
 settings_local.py
-
+*.sqlite3
+/backups/
 media/
 
 # Ignore all migration files except for __init__.py and tracked ones
