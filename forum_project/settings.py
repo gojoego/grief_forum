@@ -2,12 +2,14 @@ from decouple import config
 import dj_database_url
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-^9!yo-eo5f8#y=05wh9_$j%bvg)+ct)ll!h+(lc-8*mi@j2uyn'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -52,12 +54,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'forum_project.wsgi.application'
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL', default='sqlite:///db.sqlite3')
-    )
-}
-DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.config(default=config('DATABASE_URL'))
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -95,4 +92,8 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost','.onrender.com']
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'forgottenfilipino.com',
+    'www.forgottenfilipino.com',
+    'moriah-project-v1.onrender.com',
+]
