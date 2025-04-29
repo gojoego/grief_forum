@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-^9!yo-eo5f8#y=05wh9_$j%bvg)+ct)ll!h+(lc-8*mi@j2uyn'
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -39,7 +39,7 @@ ROOT_URLCONF = 'forum_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -88,12 +88,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost','.onrender.com']
-
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 ALLOWED_HOSTS = [
     'forgottenfilipino.com',
     'www.forgottenfilipino.com',
     'moriah-project-v1.onrender.com',
+    'localhost', 
+    '127.0.0.1'
 ]
