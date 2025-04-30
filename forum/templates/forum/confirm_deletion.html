@@ -2,12 +2,12 @@
 
 {% block content %}
 
-    <h2>delete post</h2>
-    <p>are you sure you want to delete your post to <strong>{{ post.deceased_name }}</strong></p>
+<h2>delete post</h2>
+<p>are you sure you want to delete your post to <strong>{{ post.deceased_name }}</strong></p>
 
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit" class="delete-button">yes, delete</button>
-        <a href="{% url 'home' %}">cancel</a>
-    </form>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="delete-button" class="primary-button">yes, delete</button>
+    <a href="{% url 'home' %}">cancel</a>
+</form>
 {% endblock content %}

@@ -8,13 +8,23 @@
     <script src="{% static 'forum/js/script.js' %}" defer></script>
 </head>
 <body>
-
+    <div id="disclaimer-modal" class="modal">
+        <div class="modal-content">
+             <h2>Welcome to The Moriah Project</h2>
+             <p class="disclaimer-text">
+                This is a safe space to grieve those you've lost to suicide.<br>
+                It is in no way meant to replace therapy or services from any psychiatric provider.<br>
+                Please call 911 immediately if you are at risk for self-harm or are having a psychiatric/medical emergency.
+             </p>
+             <button id="continue-button" class="primary-button">continue</button>
+        </div>
+    </div>
     {% if user.is_authenticated %}
     <p>
         logged in as {{ user.username }} |
         <form method="post" action="{% url 'logout' %}" style="display: inline;">
             {% csrf_token %}
-            <button type="submit" class="logout-button">
+            <button type="submit" class="primary-button">
                 logout 
             </button>
         </form>        
@@ -41,7 +51,6 @@
     {% endif %}
 
     <hr>
-
     {% block content %}{% endblock %}
 
 </body>
