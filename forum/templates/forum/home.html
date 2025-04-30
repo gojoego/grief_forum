@@ -10,7 +10,7 @@
             <li>post with honesty</li>
             <li>most importantly... remember to be kind to yourself</li>
         </p>
-        <a href="{% url 'guidelines' %}" class="read-more-button">read more</a>
+        <a href="{% url 'guidelines' %}" class="primary-button">read more</a>
     </section>
     {% for post in posts %}
         <div class="post-container">
@@ -27,7 +27,7 @@
             </div>
             {% if user.is_authenticated and user.first_name == post.poster_name %}
                 <form method="get" action="{% url 'delete_post' post.id %}">
-                    <button type="submit" class="delete-button">delete</button>
+                    <button type="submit" class="primary-button">delete</button>
                 </form>
             {% endif %}
             
@@ -39,7 +39,7 @@
     {% endfor %}
 
     <div class="button-container">
-        <a href="{% url 'create_post' %}" class="button-link create-post">create new post</a>
+        <a href="{% url 'create_post' %}" class="button-link create-post primary-button">create new post</a>
     </div>
 
     <hr>

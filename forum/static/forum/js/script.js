@@ -39,3 +39,32 @@ function toggleSection(id){
             : (id === 'about-me' ? 'hide about me' : 'hide about this website');
     }
 }
+
+function showDisclaimerModal(){
+    console.log("👀 Checking for disclaimer display...");
+
+    const modal = document.getElementById('disclaimer-modal')
+    const continueButton = document.getElementById('continue-button')
+
+    // check if disclaimer already acknowledge this session
+    const hasSeenDisclaimer = localStorage.getItem('hasSeenDisclaimer')
+    console.log("🧠 localStorage flag:", hasSeenDisclaimer);
+
+    if (!hasSeenDisclaimer && modal && continueButton){
+        console.log("📢 Showing modal...");
+        modal.style.display = 'flex';
+
+        continueButton.addEventListener('click', function() {
+            localStorage.setItem('hasSeenDisclaimer', 'true');
+            modal.style.display = 'none';
+            console.log("✅ Modal dismissed and localStorage updated.");
+        });
+    } else {
+        console.log("🙌 Disclaimer already acknowledged — forcing modal to stay hidden");
+        if (modal) {
+            modal.style.display = 'none'
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', showDisclaimerModal);
