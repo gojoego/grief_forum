@@ -91,8 +91,8 @@ LOGOUT_REDIRECT_URL = '/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 ALLOWED_HOSTS = [
-    'forgottenfilipino.com',
-    'www.forgottenfilipino.com',
+    '.themoriahproject.org',
+    '.moriahproject.org'
     'moriah-project-v1.onrender.com',
     'localhost', 
     '127.0.0.1'
