@@ -92,7 +92,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 ALLOWED_HOSTS = [
     '.themoriahproject.org',
-    '.moriahproject.org'
+    '.moriahproject.org',
     'moriah-project-v1.onrender.com',
     'localhost', 
     '127.0.0.1'
