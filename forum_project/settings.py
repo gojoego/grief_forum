@@ -97,3 +97,13 @@ ALLOWED_HOSTS = [
     'localhost', 
     '127.0.0.1'
 ]
+
+from email.utils import formataddr
+
+EMAIL_BACKEND = config('EMAIL_BACKEND')
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('SG_KEY')
+DEFAULT_FROM_EMAIL = formataddr(("The Moriah Project", config("DEFAULT_FROM_EMAIL")))
