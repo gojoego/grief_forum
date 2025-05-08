@@ -16,7 +16,7 @@ def create_post(request):
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-            post.poster_name = request.user.first_name
+            post.author = request.user
             post.save()
             messages.success(request, "your post has been shared")
             return redirect('home')
@@ -36,16 +36,17 @@ def register(request):
         form = CustomUserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
 
+@login_required
 def delete_post(request, pk):
     post = get_object_or_404(Post, pk=pk)
     
     # only allow if user is also poster 
-    if post.poster_name != request.user.first_name:
-        return redirect('home')
+    if post.author != request.user:
+        return HttpResponseForbidden("you can't delete someone else's post")
     
     if request.method == "POST":
         post.delete()
         messages.success(request, "your post has been deleted.")
-        return redirect('home')
+        return redirect("home")
 
-    return render(request, 'forum/confirm_deletion.html', {'post': post})
+    return render(request, "forum/confirm_deletion.html", {"post": post})

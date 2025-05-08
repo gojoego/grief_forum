@@ -23,11 +23,12 @@
                 <h4>What I wish I could say to {{ post.deceased_name }}:</h4>
                 <p><strong>Dear {{ post.deceased_name }},</strong></p>
                 <p>{{ post.message_to_deceased }}</p>
-                <p><strong>Love,</strong><br>{{ post.poster_name }}</p>
+                <p><strong>Love,</strong><br>{{ post.author.first_name|default:post.author.username }}</p>
             </div>
-            {% if user.is_authenticated and user.first_name == post.poster_name %}
-                <form method="get" action="{% url 'delete_post' post.id %}">
-                    <button type="submit" class="primary-button">delete</button>
+            {% if user == post.author %}
+                <form method="post" action="{% url 'delete_post' post.pk %}">
+                    {% csrf_token %}
+                    <button type="submit" class="delete-button">delete</button>
                 </form>
             {% endif %}
             
