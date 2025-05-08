@@ -111,3 +111,9 @@ Thumbs.db
 
 # === Others (if used) ===
 __pypackages__/
+
+*.pyc
+__pycache__/
+.env
+db.sqlite3
+/staticfiles/

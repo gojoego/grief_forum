@@ -15,7 +15,7 @@ urlpatterns = [
              template_name='registration/password_reset_form.html',
              email_template_name='registration/password_reset_email.html',
              subject_template_name='registration/password_reset_subject.txt',
-             from_email='joe@moriahproject.org'
+             from_email='joe@Grief Forum.org'
              ), name="password_reset"),
     path('password-reset/done/', 
          auth_views.PasswordResetDoneView.as_view(template_name='registration/password_reset_done.html'), 
