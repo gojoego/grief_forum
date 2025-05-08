@@ -55,17 +55,6 @@ DJANGO_ALLOWED_HOSTS
 DATABASE_URL
 Optional email backend settings (SMTP)
 
-## project structure
-
-grief_forum/
-├── forum/              # Main Django app
-├── forum_project/      # Project config
-├── templates/          # HTML templates
-├── static/             # Static files (CSS, JS)
-├── db.sqlite3          # SQLite database (local only)
-├── .env.example        # Environment variable template
-└── README.md           # You're reading it!
-
 ## .env example 
 Here's what your .env file should look like:
 
